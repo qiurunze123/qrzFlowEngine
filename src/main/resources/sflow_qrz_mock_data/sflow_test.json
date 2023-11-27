@@ -1,0 +1,44 @@
+{
+  "sFlows":[
+
+    {
+      "code":"supplier_flow",
+      "supportedScene":[
+        "machine_check"
+      ],
+      "supportedBizType":"flowA_supplier",
+      "desc":"机审校验流程A 公司不为空",
+      "nodes":[
+        {
+          "nodeCode":"check_company_name",
+          "desc":"校验公司",
+          "executeComponent":"CompanyNodeOne",
+          "returnHandler":{
+            "exceptionHandleType":"FINISH",
+            "resultHandle":" import com.flowframe.sflow.core; import org.apache.commons.lang3 ;if (StringUtils.isEmpty(sflowContext.getCompanyName())) { sflowContext.setUnderTakeRes(0);  return 'RegisterApproveAfterServiceImpl'; } ",
+            "executeComponent":"RegisterApproveQlExpressServiceImpl"
+          }
+        },
+        {
+          "nodeCode":"check_address",
+          "desc":"校验地址",
+          "executeComponent":"AddressNodeOne",
+          "returnHandler":{
+            "exceptionHandleType":"FINISH",
+            "resultHandle":"import com.flowframe.sflow.core;import org.apache.commons.lang3 ; if(StringUtils.isEmpty(sflowContext.getAddress())) { sflowContext.setUnderTakeRes(0); return 'RegisterApproveAfterServiceImpl';  } else{ sflowContext.setUnderTakeRes(0); }",
+
+            "executeComponent":"RegisterApproveQlExpressServiceImpl"
+          }
+        }
+      ],
+      "qlNodes":[
+        {
+          "nodeCode":"last_router",
+          "desc":"结果最终条件路由",
+          "qlExpress":"import com.flowframe.sflow.core;import org.apache.commons.lang3 ; import java.lang;import org.springframework.util; if(0 == sflowContext.getUnderTakeRes()){return 'RegisterApproveAfterServiceImpl';}else if(1 == sflowContext.getUnderTakeRes()){ return 'RegisterApproveAfterServiceImpl';}",
+          "executeComponent":"RegisterApproveQlExpressServiceImpl"
+        }
+      ]
+    }
+  ]
+}
