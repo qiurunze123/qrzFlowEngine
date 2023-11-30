@@ -22,6 +22,5 @@
 
 ![【供应商入驻引擎领域模型大而全】 drawio](https://github.com/qiurunze123/SFlowEngine/assets/22807361/ac0bdb2a-f4f6-4a26-bc21-28f415d50411)
 
-![【配置中心】 drawio](https://github.com/qiurunze123/imageall/blob/master/%E9%85%8D%E7%BD%AE%E7%A9%BA%E9%97%B4diamond.png)
 ![【图2】 drawio](https://github.com/qiurunze123/imageall/blob/master/%E9%85%8D%E7%BD%AE%E7%A9%BA%E9%97%B4diamond.png)
 ![【图3】 drawio](https://github.com/qiurunze123/imageall/blob/master/flow%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B.png)
