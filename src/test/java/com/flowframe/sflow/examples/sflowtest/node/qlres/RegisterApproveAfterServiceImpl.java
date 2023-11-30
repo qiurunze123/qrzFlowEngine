@@ -28,10 +28,11 @@ public class RegisterApproveAfterServiceImpl implements SComponent<SContext> {
     public void process(SContext input) {
         SflowContext sflowContext = (SflowContext)input;
         Integer response = sflowContext.getUnderTakeRes();
+        String nodeCode = (String)sflowContext.getExtMap().get("nodeCode");
         if(0 == response ){
-            log.info("最终结果返回response approve 最终出口在这", JSON.toJSONString(response));
+            log.info("最终结果返回response approve,response :{} , nodeCode:{}  最终出口在这", JSON.toJSONString(response),nodeCode);
         }else if((1 == response )){
-            log.info("最终结果返回response reject 最终出口在这", JSON.toJSONString(response));
+            log.info("最终结果返回response reject ,response :{} , nodeCode:{} 最终出口在这", JSON.toJSONString(response),nodeCode);
         }
         SFlowInstance sFlowInstance = input.getSFlowInstance();
         sFlowInstance.setFlowStatusEnum(FlowStatusEnum.FINISH);

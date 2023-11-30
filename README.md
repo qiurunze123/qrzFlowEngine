@@ -2,12 +2,17 @@
 
 # qrzFlowEngine
 极简流程引擎框架【配置化，节点话，原子化，自闭环处理】
-【有思路的我三天就可以一顿爆写哈哈】
+【有思路的我三天就可以一顿爆写哈哈】 
 ## 学习此项目你需要了解的知识
 1. 了解抽象，反射，继承，实现，bean注入 等写框架的基本知识
 2. 去看下QL-express的基本用法
 3. 了解spring-bean查找的基本原理
 4. 熟悉框架流程原子能力
+
+## 流程入口
+1. testRunFlowA_have_companyName
+2. testRunFlowB_No_companyName
+具体原理看返回结果
 
 
 ## 背景

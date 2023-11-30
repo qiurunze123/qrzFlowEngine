@@ -41,13 +41,23 @@ public class SflowTest {
 
 
     @Test
-    public void testRunFlowA() {
+    public void testRunFlowA_have_companyName() {
         SflowContext sflowContext = new SflowContext();
         sflowContext.setCompanyName("alibaba");
         sflowContext.setSceneCode(FLOW_A.getScene());
         sflowContext.setBizType(FLOW_A.getBiz());
         SflowContext res = (SflowContext)sFlowEngine.startFlow(sflowContext);
-        log.info("res"+JSON.toJSONString(res));
+        log.info("返回结果为res"+JSON.toJSONString(res));
+    }
+
+
+    @Test
+    public void testRunFlowB_No_companyName() {
+        SflowContext sflowContext = new SflowContext();
+        sflowContext.setSceneCode(FLOW_A.getScene());
+        sflowContext.setBizType(FLOW_A.getBiz());
+        SflowContext res = (SflowContext)sFlowEngine.startFlow(sflowContext);
+        log.info("返回结果为res"+JSON.toJSONString(res));
     }
 
 
